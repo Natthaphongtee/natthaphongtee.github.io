@@ -68,11 +68,11 @@
       const username = document.getElementById('username').value.trim();
       const password = document.getElementById('password').value.trim();
 
-      // ตัวอย่างตรวจสอบง่าย ๆ
+      // ตรวจสอบง่าย ๆ
       if (username === 'admin' && password === '1234') {
         alert('ล็อกอินสำเร็จ ยินดีต้อนรับ ' + username + '!');
-        // คุณอาจจะ redirect ไปหน้าอื่น
-        // window.location.href = 'home.html';
+        // ไปหน้า index.html
+        window.location.href = 'index.html';
       } else {
         alert('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง!');
       }
