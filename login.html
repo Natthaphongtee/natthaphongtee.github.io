@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - Luciano</title>
+  <style>
+    body {
+      font-family: 'Sarabun', sans-serif, Arial, sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login-container {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      width: 320px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 24px;
+      color: #0a9396;
+    }
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border: 1.5px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    input[type="submit"] {
+      width: 100%;
+      padding: 14px;
+      background-color: #ee9b00;
+      color: white;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background-color 0.3s;
+    }
+    input[type="submit"]:hover {
+      background-color: #ca7f00;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>เข้าสู่ระบบ Luciano</h2>
+    <form onsubmit="return handleLogin(event)">
+      <input type="text" id="username" placeholder="ชื่อผู้ใช้" required />
+      <input type="password" id="password" placeholder="รหัสผ่าน" required />
+      <input type="submit" value="ล็อกอิน" />
+    </form>
+  </div>
+
+  <script>
+    function handleLogin(event) {
+      event.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      // ตัวอย่างตรวจสอบง่าย ๆ
+      if (username === 'admin' && password === '1234') {
+        alert('ล็อกอินสำเร็จ ยินดีต้อนรับ ' + username + '!');
+        // คุณอาจจะ redirect ไปหน้าอื่น
+        // window.location.href = 'home.html';
+      } else {
+        alert('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง!');
+      }
+      return false;
+    }
+  </script>
+</body>
+</html>
