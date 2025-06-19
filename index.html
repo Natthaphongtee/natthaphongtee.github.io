@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luciano - ธุรกิจสุขภาพ</title>
+  <style>
+    /* Reset พื้นฐาน */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Sarabun', sans-serif, Arial, Helvetica, sans-serif;
+      background-color: #fff;
+      color: #222;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #0a9396;
+      padding: 20px 40px;
+      text-align: center;
+      color: white;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 5px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+    nav {
+      background: #94d2bd;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 12px 0;
+      font-weight: 600;
+    }
+    nav a {
+      color: #222;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #0a9396;
+    }
+    .hero {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+    }
+    .hero-text {
+      flex: 1 1 400px;
+    }
+    .hero-text h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #005f73;
+    }
+    .hero-text p {
+      font-size: 1.15rem;
+      margin-bottom: 25px;
+      color: #333;
+    }
+    .btn-primary {
+      display: inline-block;
+      background-color: #ee9b00;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .btn-primary:hover {
+      background-color: #ca7f00;
+    }
+    .hero-image {
+      flex: 1 1 400px;
+      text-align: center;
+    }
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    footer {
+      background-color: #0a9396;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 60px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-text, .hero-image {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <h1>Luciano</h1>
+    <p>สุขภาพดี เริ่มต้นจากธรรมชาติ</p>
+  </header>
+
+  <nav>
+    <a href="#">หน้าแรก</a>
+    <a href="#">สินค้า</a>
+    <a href="#">เกี่ยวกับเรา</a>
+    <a href="#">ติดต่อ</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>สินค้าธรรมชาติคุณภาพ เพื่อชีวิตที่ดีกว่า</h2>
+      <p>เราคัดสรรผลิตภัณฑ์สุขภาพจากธรรมชาติแท้ ๆ เพื่อคุณและครอบครัวของคุณ</p>
+      <a href="https://line.me" class="btn-primary">ติดต่อผ่าน LINE</a>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="สินค้าธรรมชาติ" />
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Luciano. สงวนลิขสิทธิ์ทุกประการ
+  </footer>
+</body>
+</html>
