@@ -3,115 +3,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Luciano - ธุรกิจสุขภาพ</title>
+  <title>Luciano - Forex ความรู้และ Copy Trade</title>
   <style>
-    /* Reset */
-    * {
-      box-sizing: border-box;
-      margin: 0; padding: 0;
-    }
     body {
       font-family: 'Sarabun', sans-serif, Arial, sans-serif;
-      background: #fff;
-      color: #222;
+      margin: 0; padding: 0;
+      background: #e6f0fa; /* ฟ้าอ่อน */
+      color: #003366; /* ฟ้าเข้ม */
       line-height: 1.6;
     }
     header {
-      background-color: #0a9396;
-      padding: 20px 40px;
+      background-color: #004080; /* ฟ้าคมเข้ม */
+      color: white;
+      padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: white;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 10;
     }
     header .logo {
-      font-size: 1.8rem;
       font-weight: 700;
+      font-size: 1.8rem;
       letter-spacing: 2px;
       cursor: default;
-    }
-    nav {
       display: flex;
-      gap: 25px;
-      font-weight: 600;
+      align-items: center;
+      gap: 15px;
+    }
+    header .logo img {
+      height: 40px;
+      width: auto;
     }
     nav a {
       color: white;
       text-decoration: none;
+      margin-left: 25px;
+      font-weight: 600;
       font-size: 1rem;
-      padding: 5px 10px;
-      border-radius: 5px;
-      transition: background-color 0.3s;
+      transition: color 0.3s;
     }
     nav a:hover {
-      background-color: #005f73;
+      color: #66a3ff;
     }
-    .hero {
-      max-width: 1200px;
+    main {
+      max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
-      display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .hero-text {
-      flex: 1 1 400px;
-    }
-    .hero-text h1 {
-      font-size: 3rem;
-      color: #005f73;
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
-    .hero-text p {
-      font-size: 1.25rem;
-      margin-bottom: 25px;
-      color: #333;
-    }
-    .btn-primary {
-      background-color: #ee9b00;
-      color: white;
-      padding: 14px 30px;
-      font-weight: 700;
-      text-decoration: none;
-      border-radius: 8px;
-      display: inline-block;
-      transition: background-color 0.3s;
-    }
-    .btn-primary:hover {
-      background-color: #ca7f00;
-    }
-    .hero-image {
-      flex: 1 1 400px;
-      text-align: center;
-    }
-    .hero-image img {
-      max-width: 100%;
+      background: white;
       border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #004080;
+      text-align: center;
+      padding: 30px 0 15px 0;
+      font-weight: 700;
+    }
+    section {
+      padding: 0 30px 40px 30px;
+    }
+    h2 {
+      color: #0066cc;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      border-left: 5px solid #3399ff;
+      padding-left: 10px;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
     }
     footer {
-      background-color: #0a9396;
-      color: white;
       text-align: center;
-      padding: 20px 10px;
-      margin-top: 60px;
+      padding: 20px 0;
+      background-color: #004080;
+      color: white;
+      margin-top: 40px;
       font-size: 0.9rem;
     }
 
     /* Responsive */
     @media (max-width: 768px) {
-      .hero {
+      header {
         flex-direction: column;
-        text-align: center;
+        align-items: flex-start;
       }
       nav {
-        justify-content: center;
-        gap: 15px;
+        margin-top: 10px;
+      }
+      nav a {
+        margin-left: 0;
+        margin-right: 15px;
+      }
+      main {
+        margin: 20px 10px;
+        padding: 15px;
       }
     }
   </style>
@@ -119,25 +107,49 @@
 </head>
 <body>
   <header>
-    <div class="logo">Luciano</div>
+    <div class="logo">
+      <img src="bbab880f-817a-441c-8221-3fbffdc05d60.png" alt="Luciano Logo" />
+      <span>Luciano</span>
+    </div>
     <nav>
-      <a href="index.html">หน้าแรก</a>
-      <a href="#">สินค้า</a>
-      <a href="#">เกี่ยวกับเรา</a>
-      <a href="login.html">ออกจากระบบ</a>
+      <a href="#results">ผลลัพท์การเทรด</a>
+      <a href="#copytrade">Copy Trade คืออะไร</a>
+      <a href="#contact">ติดต่อเรา</a>
+      <a href="#master">Master</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h1>สุขภาพดี เริ่มต้นจากธรรมชาติ</h1>
-      <p>เราคัดสรรผลิตภัณฑ์สุขภาพจากธรรมชาติแท้ ๆ เพื่อคุณและครอบครัวของคุณ</p>
-      <a href="https://line.me" class="btn-primary">ติดต่อผ่าน LINE</a>
-    </div>
-    <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="สินค้าธรรมชาติ" />
-    </div>
-  </section>
+  <main>
+    <h1>ความรู้เกี่ยวกับ Forex และ Copy Trade</h1>
+
+    <section id="results">
+      <h2>ผลลัพท์การเทรด</h2>
+      <p>ผลลัพท์การเทรด Forex เป็นสิ่งที่นักลงทุนหลายคนให้ความสนใจอย่างมาก ซึ่งการเทรดต้องใช้ความรู้ ความอดทน และการวิเคราะห์ตลาดอย่างรอบคอบ เพื่อให้ได้ผลกำไรที่ดีและลดความเสี่ยงให้น้อยที่สุด</p>
+      <p>การติดตามผลลัพท์การเทรดของ Master Trader หรือผู้เชี่ยวชาญ จะช่วยให้คุณมีข้อมูลประกอบการตัดสินใจได้ดียิ่งขึ้น</p>
+    </section>
+
+    <section id="copytrade">
+      <h2>Copy Trade คืออะไร</h2>
+      <p>Copy Trade คือระบบที่อนุญาตให้นักลงทุนทั่วไปสามารถคัดลอกการเทรดของมืออาชีพแบบอัตโนมัติ โดยไม่ต้องวิเคราะห์ตลาดเอง ทำให้ผู้ที่ไม่มีเวลาหรือความรู้มาก สามารถลงทุนตามผู้เชี่ยวชาญได้อย่างง่ายดาย</p>
+      <p>ระบบนี้ช่วยลดความเสี่ยงและเพิ่มโอกาสในการทำกำไร โดยเฉพาะถ้าเลือก Master Trader ที่มีประวัติการเทรดดี</p>
+    </section>
+
+    <section id="contact">
+      <h2>ติดต่อเรา</h2>
+      <p>หากคุณสนใจเรียนรู้เพิ่มเติมเกี่ยวกับ Forex หรือ Copy Trade สามารถติดต่อเราได้ทาง:</p>
+      <ul>
+        <li>LINE: @luciano</li>
+        <li>โทรศัพท์: 09x-xxx-xxxx</li>
+        <li>อีเมล: info@luciano.com</li>
+      </ul>
+    </section>
+
+    <section id="master">
+      <h2>Master</h2>
+      <p>Master Trader คือผู้ที่มีประสบการณ์และความเชี่ยวชาญในการเทรด Forex โดยมีผลงานการเทรดที่โดดเด่น สามารถเป็นตัวอย่างให้กับนักลงทุนที่ต้องการคัดลอกการเทรดผ่านระบบ Copy Trade</p>
+      <p>การเลือก Master ที่เหมาะสมเป็นสิ่งสำคัญเพื่อความสำเร็จในตลาด Forex</p>
+    </section>
+  </main>
 
   <footer>
     &copy; 2025 Luciano. สงวนลิขสิทธิ์ทุกประการ
