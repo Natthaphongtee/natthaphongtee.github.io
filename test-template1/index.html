@@ -13,17 +13,15 @@
 
         <!-- CSS FILES -->        
         <link href="css/bootstrap.min.css" rel="stylesheet">
-
         <link href="css/bootstrap-icons.css" rel="stylesheet">
-
         <link href="css/templatemo-kind-heart-charity.css" rel="stylesheet">
-<!--
 
-TemplateMo 581 Kind Heart Charity
-
-https://templatemo.com/tm-581-kind-heart-charity
-
--->
+        <style>
+          @keyframes scroll-left {
+            0%   { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+          }
+        </style>
 
     </head>
     
@@ -32,7 +30,6 @@ https://templatemo.com/tm-581-kind-heart-charity
         <header class="site-header">
             <div class="container">
                 <div class="row">
-                    
                     <div class="col-lg-8 col-12 d-flex flex-wrap">
                         <p class="d-flex me-4 mb-0">
                             <i class="bi-geo-alt me-2"></i>
@@ -41,7 +38,6 @@ https://templatemo.com/tm-581-kind-heart-charity
 
                         <p class="d-flex mb-0">
                             <i class="bi-envelope me-2"></i>
-
                             <a href="mailto:info@company.com">
                                 info@company.com
                             </a>
@@ -71,176 +67,57 @@ https://templatemo.com/tm-581-kind-heart-charity
                             </li>
                         </ul>
                     </div>
-
                 </div>
             </div>
         </header>
 
-       <style>
-  body {
-    background-color: #EAF6FF; /* สีพื้นหลังอ่อนให้อ่านง่าย */
-    color: #1A1A1A;
-    font-family: 'Poppins', sans-serif;
-  }
-
-  header.site-header {
-    background-color: #307CC0; /* สีใหม่ที่คุณเลือก */
-    padding: 15px 0;
-    color: #FFFFFF;
-  }
-
-  .site-header a {
-    color: #FFFFFF;
-    font-weight: bold;
-    font-size: 20px;
-    text-decoration: none;
-  }
-
-  .site-header a:hover {
-    color: #FFEB3B;
-  }
-
-  .social-icon-link {
-    color: #FFFFFF !important;
-  }
-
-  .social-icon-link:hover {
-    color: #FFEB3B !important;
-  }
-
-  .hero {
-    background-color: #EAF6FF;
-    padding: 80px 0;
-    text-align: center;
-  }
-
-  .hero h1 {
-    font-size: 3rem;
-    color: #307CC0;
-  }
-
-  .hero p {
-    font-size: 1.2rem;
-    color: #333333;
-  }
-
-  .btn-primary {
-    background-color: #307CC0;
-    color: #FFFFFF;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 8px;
-    transition: 0.3s ease-in-out;
-  }
-
-  .btn-primary:hover {
-    background-color: #255C90;
-    color: #FFFFFF;
-  }
-
-  section.features {
-    padding: 60px 0;
-    background-color: #FFFFFF;
-  }
-
-  .feature-box {
-    background-color: #F0F9FF;
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid #C0E0F8;
-    box-shadow: 0 0 15px rgba(48, 124, 192, 0.1);
-    margin-bottom: 30px;
-  }
-
-  .feature-box h5 {
-    color: #307CC0;
-  }
-
-  footer {
-    background-color: #307CC0;
-    padding: 40px 0;
-    text-align: center;
-    color: #FFFFFF;
-  }
-
-  footer a {
-    color: #FFEB3B;
-    text-decoration: none;
-  }
-
-  footer a:hover {
-    color: #FFFFFF;
-  }
-</style>
-
         <!-- Market Ticker Bar -->
-<div style="background: #1631c4; color: white; padding: 10px 0; overflow: hidden;">
-  <div id="ticker" style="white-space: nowrap; animation: scroll-left 20s linear infinite; font-size: 14px;"></div>
-</div>
+        <div style="background: #1631c4; color: white; padding: 10px 0; overflow: hidden;">
+          <div id="ticker" style="white-space: nowrap; animation: scroll-left 20s linear infinite; font-size: 14px;"></div>
+        </div>
 
-<style>
-@keyframes scroll-left {
-  0%   { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-</style>
+        <script>
+        async function fetchMarketData() {
+          const tickerEl = document.getElementById('ticker');
 
-<script>
-async function fetchMarketData() {
-  const tickerEl = document.getElementById('ticker');
+          try {
+            // ดึงค่าเงิน Forex (USD base)
+            const fxRes = await fetch('https://api.exchangerate.host/latest?base=USD&symbols=EUR,JPY,GBP');
+            const fxData = await fxRes.json();
+            const eur = fxData.rates.EUR.toFixed(4);
+            const jpy = fxData.rates.JPY.toFixed(2);
+            const gbp = fxData.rates.GBP.toFixed(4);
 
-  try {
-    // ดึงค่าเงิน Forex (USD base)
-    const fxRes = await fetch('https://api.exchangerate.host/latest?base=USD&symbols=EUR,JPY,GBP');
-    const fxData = await fxRes.json();
-    const eur = fxData.rates.EUR.toFixed(4);
-    const jpy = fxData.rates.JPY.toFixed(2);
-    const gbp = fxData.rates.GBP.toFixed(4);
+            // ดึงราคาคริปโต (BTC, ETH) จาก CoinGecko
+            const cryptoRes = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd');
+            const cryptoData = await cryptoRes.json();
+            const btc = cryptoData.bitcoin.usd.toLocaleString();
+            const eth = cryptoData.ethereum.usd.toLocaleString();
 
-    // ดึงราคาคริปโต (BTC, ETH) จาก CoinGecko
-    const cryptoRes = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd');
-    const cryptoData = await cryptoRes.json();
-    const btc = cryptoData.bitcoin.usd.toLocaleString();
-    const eth = cryptoData.ethereum.usd.toLocaleString();
+            // แสดงผลในแถบ ticker (ตัดราคาทองคำออก)
+            tickerEl.innerHTML = `
+              <span style="margin-right: 50px;">EUR/USD: ${eur}</span>
+              <span style="margin-right: 50px;">USD/JPY: ${jpy}</span>
+              <span style="margin-right: 50px;">GBP/USD: ${gbp}</span>
+              <span style="margin-right: 50px;">BTC/USD: $${btc}</span>
+              <span style="margin-right: 50px;">ETH/USD: $${eth}</span>
+            `;
+          } catch (err) {
+            tickerEl.innerHTML = '<span style="color: yellow;">⚠️ Failed to load market data</span>';
+            console.error('Market data fetch error:', err);
+          }
+        }
 
-    // ดึงราคาทองคำ (XAU/USD) จาก GoldAPI.io ด้วย API Key ของคุณ
-    const goldRes = await fetch('https://www.goldapi.io/api/XAU/USD', {
-      headers: {
-        'x-access-token': 'goldapi-25g6ysmc616a1q-io',
-        'Content-Type': 'application/json'
-      }
-    });
-    const goldData = await goldRes.json();
-    const goldPrice = goldData.price ? goldData.price.toLocaleString() : 'N/A';
-
-    // แสดงผลในแถบ ticker
-    tickerEl.innerHTML = `
-      <span style="margin-right: 50px;">EUR/USD: ${eur}</span>
-      <span style="margin-right: 50px;">USD/JPY: ${jpy}</span>
-      <span style="margin-right: 50px;">GBP/USD: ${gbp}</span>
-      <span style="margin-right: 50px;">BTC/USD: $${btc}</span>
-      <span style="margin-right: 50px;">ETH/USD: $${eth}</span>
-      <span style="margin-right: 50px;">XAU/USD (Gold): $${goldPrice}</span>
-    `;
-  } catch (err) {
-    tickerEl.innerHTML = '<span style="color: yellow;">⚠️ Failed to load market data</span>';
-    console.error('Market data fetch error:', err);
-  }
-}
-
-// โหลดครั้งแรกและรีเฟรชทุก 1 นาที
-fetchMarketData();
-setInterval(fetchMarketData, 60000);
-</script>
-
-
+        // โหลดครั้งแรกและรีเฟรชทุก 1 นาที
+        fetchMarketData();
+        setInterval(fetchMarketData, 60000);
+        </script>
 
         <nav class="navbar navbar-expand-lg bg-light shadow-lg">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
                     <img src="images/LUCIANO TenX - Horizons.png" style="height: 70px;">
-                    <span>
-                    </span>
+                    <span></span>
                 </a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -270,7 +147,6 @@ setInterval(fetchMarketData, 60000);
 
                             <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
                                 <li><a class="dropdown-item" href="news.html">News Listing</a></li>
-
                                 <li><a class="dropdown-item" href="news-detail.html">News Detail</a></li>
                             </ul>
                         </li>
@@ -288,14 +164,13 @@ setInterval(fetchMarketData, 60000);
         </nav>
 
         <style>
-/* ทุกลิงก์เมนู (รวมถึง Donate) เปลี่ยน "สีตัวอักษร" เมื่อ hover */
-.nav-link:hover,
-.nav-link:focus {
-    color: #1631c4 !important;
-    transition: color 0.2s ease-in-out;
-}
-</style>
-
+        /* ทุกลิงก์เมนู (รวมถึง Donate) เปลี่ยน "สีตัวอักษร" เมื่อ hover */
+        .nav-link:hover,
+        .nav-link:focus {
+            color: #1631c4 !important;
+            transition: color 0.2s ease-in-out;
+        }
+        </style>
 </style>
 
 
