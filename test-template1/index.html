@@ -176,14 +176,13 @@
         }
         </style>
 </style>
-        <style>
+       
+<style>
   body {
     font-family: 'Kanit', sans-serif;
   }
 </style>
-
-
-        <main>
+     <main>
 
             <section class="hero-section hero-section-full-height">
                 <div class="container-fluid">
@@ -332,114 +331,234 @@
             </section>
 
 
-<h2>จุดเด่นของระบบเทรดอัตโนมัติ Luciano</h2>
+<style>
+      /* ใช้ Font Kanit ทั่วเว็บ */
+      body {
+        font-family: 'Kanit', sans-serif;
+      }
 
-<div class="container" id="container">
-  <!-- ซ้าย -->
-  <div class="feature-row left-features">
-    <div class="feature-box">
-      <i class="fas fa-heartbeat"></i>
-      <p>ลดอารมณ์ เพิ่มวินัย</p>
+      /* ส่วนเส้นเชื่อมและ layout feature box */
+      /* เพิ่มเติมจาก CSS ที่มีอยู่ */
+      .feature-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        flex-wrap: wrap;
+        max-width: 900px;
+        margin: 40px auto;
+        min-height: 320px;
+        padding: 0 20px;
+      }
+      .feature-row {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        z-index: 3;
+      }
+      .feature-box {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        width: 220px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+        position: relative;
+      }
+      .feature-box:hover {
+        transform: scale(1.08);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      }
+      .feature-box i {
+        font-size: 28px;
+        color: #3498db;
+        margin-right: 10px;
+        width: 40px;
+        text-align: center;
+      }
+      .feature-box p {
+        margin: 0;
+        font-size: 13px;
+        color: #333;
+      }
+      .center-image {
+        position: relative;
+        z-index: 5;
+        width: 120px;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid #34495e;
+        border-radius: 20px;
+        background: #fff;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        margin: 0 40px;
+      }
+      .center-image i {
+        font-size: 70px;
+        color: #34495e;
+      }
+
+      /* SVG เส้นเชื่อม */
+      svg.lines-svg {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+      path.connection-line {
+        stroke: #3498db;
+        stroke-width: 3;
+        fill: none;
+      }
+
+      /* Responsive */
+      @media screen and (max-width: 900px) {
+        .feature-container {
+          flex-direction: column;
+          align-items: center;
+          min-height: auto;
+          padding: 0 10px;
+        }
+        .feature-row {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          margin-bottom: 20px;
+          z-index: 3;
+        }
+        .center-image {
+          margin: 30px 0;
+        }
+        svg.lines-svg {
+          display: none;
+        }
+      }
+    </style>
+</head>
+<body>
+
+    <!-- ส่วน header, nav, หรือส่วนอื่น ๆ ของคุณยังอยู่ครบตามเดิม -->
+
+    <!-- ... -->
+
+    <h2 style="text-align:center; color:#0a3d62; margin-top:40px;">จุดเด่นของระบบเทรดอัตโนมัติ Luciano</h2>
+
+    <div class="feature-container" id="feature-container">
+      <!-- ซ้าย -->
+      <div class="feature-row left-features">
+        <div class="feature-box">
+          <i class="fas fa-heartbeat"></i>
+          <p>ลดอารมณ์ เพิ่มวินัย</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-chart-line"></i>
+          <p>วิเคราะห์ข้อมูลเร็วกว่าเทรดเดอร์ทั่วไป</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-robot"></i>
+          <p>ใช้ AI / Algorithm ขั้นสูง</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-clock"></i>
+          <p>เทรด 24/5 ไม่มีหยุด</p>
+        </div>
+      </div>
+
+      <!-- กลาง -->
+      <div class="center-image" id="center-box">
+        <i class="fas fa-microchip"></i>
+      </div>
+
+      <!-- ขวา -->
+      <div class="feature-row right-features">
+        <div class="feature-box">
+          <i class="fas fa-user-shield"></i>
+          <p>มีทีมงานดูแลตลอดเวลาที่ระบบทำงาน</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-sync-alt"></i>
+          <p>วิเคราะห์ข้อมูลแบบ Real-Time</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-lightbulb"></i>
+          <p>ปรับกลยุทธ์อัตโนมัติตามตลาด</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-exclamation-triangle"></i>
+          <p>ระบบจัดการความเสี่ยง</p>
+        </div>
+      </div>
+
+      <!-- SVG เส้นเชื่อม -->
+      <svg class="lines-svg" id="lines-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <!-- เส้นจะถูกเพิ่มด้วย JavaScript -->
+      </svg>
     </div>
-    <div class="feature-box">
-      <i class="fas fa-chart-line"></i>
-      <p>วิเคราะห์ข้อมูลเร็วกว่าเทรดเดอร์ทั่วไป</p>
-    </div>
-    <div class="feature-box">
-      <i class="fas fa-robot"></i>
-      <p>ใช้ AI / Algorithm ขั้นสูง</p>
-    </div>
-    <div class="feature-box">
-      <i class="fas fa-clock"></i>
-      <p>เทรด 24/5 ไม่มีหยุด</p>
-    </div>
-  </div>
 
-  <!-- กลาง -->
-  <div class="center-image" id="center-box">
-    <i class="fas fa-microchip"></i>
-  </div>
+    <!-- ส่วนอื่น ๆ ของเว็บยังคงเดิม -->
 
-  <!-- ขวา -->
-  <div class="feature-row right-features">
-    <div class="feature-box">
-      <i class="fas fa-user-shield"></i>
-      <p>มีทีมงานดูแลตลอดเวลาที่ระบบทำงาน</p>
-    </div>
-    <div class="feature-box">
-      <i class="fas fa-sync-alt"></i>
-      <p>วิเคราะห์ข้อมูลแบบ Real-Time</p>
-    </div>
-    <div class="feature-box">
-      <i class="fas fa-lightbulb"></i>
-      <p>ปรับกลยุทธ์อัตโนมัติตามตลาด</p>
-    </div>
-    <div class="feature-box">
-      <i class="fas fa-exclamation-triangle"></i>
-      <p>ระบบจัดการความเสี่ยง</p>
-    </div>
-  </div>
+    <script>
+      function createCurvePath(x1, y1, x2, y2) {
+        // คำนวณจุด control สำหรับ Bezier curve ให้โค้งสวย ๆ
+        const dx = Math.abs(x2 - x1) / 2;
+        const controlX1 = x1 < x2 ? x1 + dx : x1 - dx;
+        const controlY1 = y1;
+        const controlX2 = x1 < x2 ? x2 - dx : x2 + dx;
+        const controlY2 = y2;
+        return `M${x1},${y1} C${controlX1},${controlY1} ${controlX2},${controlY2} ${x2},${y2}`;
+      }
 
-  <!-- SVG เส้นเชื่อม -->
-  <svg class="lines-svg" id="lines-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-    <!-- เส้นจะถูกเพิ่มด้วย JavaScript -->
-  </svg>
-</div>
+      function drawConnections() {
+        const svg = document.getElementById('lines-svg');
+        svg.innerHTML = ''; // ล้างเส้นเก่า
 
-<script>
-  function createCurvePath(x1, y1, x2, y2) {
-    // คำนวณจุด control สำหรับ Bezier curve ให้โค้งสวย ๆ
-    const dx = Math.abs(x2 - x1) / 2;
-    const controlX1 = x1 < x2 ? x1 + dx : x1 - dx;
-    const controlY1 = y1;
-    const controlX2 = x1 < x2 ? x2 - dx : x2 + dx;
-    const controlY2 = y2;
-    return `M${x1},${y1} C${controlX1},${controlY1} ${controlX2},${controlY2} ${x2},${y2}`;
-  }
+        const container = document.getElementById('feature-container');
+        const centerBox = document.getElementById('center-box');
+        const centerRect = centerBox.getBoundingClientRect();
+        const containerRect = container.getBoundingClientRect();
 
-  function drawConnections() {
-    const svg = document.getElementById('lines-svg');
-    svg.innerHTML = ''; // ล้างเส้นเก่า
+        // ตำแหน่งกลางกรอบ Microchip (relative to container)
+        const centerX = centerRect.left + centerRect.width / 2 - containerRect.left;
+        const centerY = centerRect.top + centerRect.height / 2 - containerRect.top;
 
-    const container = document.getElementById('container');
-    const centerBox = document.getElementById('center-box');
-    const centerRect = centerBox.getBoundingClientRect();
-    const containerRect = container.getBoundingClientRect();
+        // หากล่องซ้ายและขวา
+        const leftBoxes = document.querySelectorAll('.left-features .feature-box');
+        const rightBoxes = document.querySelectorAll('.right-features .feature-box');
 
-    // ตำแหน่งกลางกรอบ Microchip (relative to container)
-    const centerX = centerRect.left + centerRect.width / 2 - containerRect.left;
-    const centerY = centerRect.top + centerRect.height / 2 - containerRect.top;
+        // วาดเส้นจากแต่ละกล่องไป center
+        [...leftBoxes].forEach(box => {
+          const boxRect = box.getBoundingClientRect();
+          const startX = boxRect.right - containerRect.left; // ขอบขวาของกล่องซ้าย
+          const startY = boxRect.top + boxRect.height / 2 - containerRect.top;
+          const d = createCurvePath(startX, startY, centerX - 60, centerY); // ชนกรอบซ้าย (ลด 60px เพราะกรอบกว้าง 120px)
+          const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+          path.setAttribute('d', d);
+          path.classList.add('connection-line');
+          svg.appendChild(path);
+        });
 
-    // หากล่องซ้ายและขวา
-    const leftBoxes = document.querySelectorAll('.left-features .feature-box');
-    const rightBoxes = document.querySelectorAll('.right-features .feature-box');
+        [...rightBoxes].forEach(box => {
+          const boxRect = box.getBoundingClientRect();
+          const startX = boxRect.left - containerRect.left; // ขอบซ้ายของกล่องขวา
+          const startY = boxRect.top + boxRect.height / 2 - containerRect.top;
+          const d = createCurvePath(startX, startY, centerX + 60, centerY); // ชนกรอบขวา (บวก 60px)
+          const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+          path.setAttribute('d', d);
+          path.classList.add('connection-line');
+          svg.appendChild(path);
+        });
+      }
 
-    // วาดเส้นจากแต่ละกล่องไป center
-    [...leftBoxes].forEach(box => {
-      const boxRect = box.getBoundingClientRect();
-      const startX = boxRect.right - containerRect.left; // ขอบขวาของกล่องซ้าย
-      const startY = boxRect.top + boxRect.height / 2 - containerRect.top;
-      const d = createCurvePath(startX, startY, centerX - 60, centerY); // ชนกรอบซ้าย (ลด 60px เพราะกรอบกว้าง 120px)
-      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-      path.setAttribute('d', d);
-      path.classList.add('connection-line');
-      svg.appendChild(path);
-    });
-
-    [...rightBoxes].forEach(box => {
-      const boxRect = box.getBoundingClientRect();
-      const startX = boxRect.left - containerRect.left; // ขอบซ้ายของกล่องขวา
-      const startY = boxRect.top + boxRect.height / 2 - containerRect.top;
-      const d = createCurvePath(startX, startY, centerX + 60, centerY); // ชนกรอบขวา (บวก 60px)
-      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-      path.setAttribute('d', d);
-      path.classList.add('connection-line');
-      svg.appendChild(path);
-    });
-  }
-
-  window.addEventListener('load', drawConnections);
-  window.addEventListener('resize', drawConnections);
+      window.addEventListener('load', drawConnections);
+      window.addEventListener('resize', drawConnections);
 </script>
             <section class="cta-section section-padding section-bg">
                 <div class="container">
